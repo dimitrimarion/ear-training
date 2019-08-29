@@ -1,11 +1,22 @@
+'use strict'
+
+const MAX_FREQ = 5000;
+const STEP = 100;
+
+// Sequence of frequencies from 100Hz to 5000Hz: [100, 200, ... , 4900, 5000] 
+const freqRange = Array.from(Array(MAX_FREQ/STEP +1).keys()).map(x => x*STEP).slice(1);
+
 // create web audio api context
-var audioCtx = new AudioContext();
+const audioCtx = new AudioContext();
 
 // create Oscillator node
-var oscillator = audioCtx.createOscillator();
+const oscillator = audioCtx.createOscillator();
 
-oscillator.type = 'square';
-oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
+const freqValue = freqRange[Math.floor(Math.random()*freqRange.length)];
+console.log(freqValue);
+
+oscillator.type = 'sine';
+oscillator.frequency.setValueAtTime(freqValue, audioCtx.currentTime); // value in hertz
 oscillator.start();
 
 const buttonStart = document.querySelector('.start');
