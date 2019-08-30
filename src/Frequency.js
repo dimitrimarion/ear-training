@@ -22,4 +22,4 @@ function random(bound) {
     return Math.floor(Math.random()*bound);
 }
 
-module.exports = Frequency;
+export default Frequency;
