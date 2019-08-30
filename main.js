@@ -28,12 +28,20 @@ const oscillator = audioCtx.createOscillator();
 
 oscillator.type = 'sine';
 oscillator.frequency.setValueAtTime(freqValue, audioCtx.currentTime); // value in hertz
-oscillator.start();
 
 const buttonStart = document.querySelector('.start');
 
+let oscillatorStarted = false;
+
 buttonStart.addEventListener('click', function() {
+
     oscillator.connect(audioCtx.destination);
+
+    if (!oscillatorStarted) {
+        oscillator.start();
+        oscillatorStarted = true;
+    }   
+    
 }, false);
 
 const buttonStop = document.querySelector('.stop');
