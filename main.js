@@ -1,30 +1,10 @@
 'use strict'
 
+import Frequency from './src/Frequency';
+
 const MAX_FREQ = 5000;
 const STEP = 100;
 const NB_GUESS = 3;
-
-function Frequency() {
-    this.freqRange = []
-    this.freqToGuess = [];
-    this.freqValue = 0;
-}
-
-Frequency.prototype.fillFreqRange = function(maxFreq, step) {
-    this.freqRange = Array.from(Array(MAX_FREQ/STEP +1).keys()).map(x => x*STEP).slice(1);
-}
-
-Frequency.prototype.fillFreqToGuess = function(nbGuess) {
-    this.freqToGuess = Array.from({length: NB_GUESS}, x => this.freqRange[random(this.freqRange.length)]);
-}
-
-Frequency.prototype.setFreqValue = function() {
-    this.freqValue = this.freqToGuess[random(this.freqToGuess.length)];
-}
-
-function random(bound) {
-    return Math.floor(Math.random()*bound);
-}
 
 const frequency = new Frequency();
 frequency.fillFreqRange(MAX_FREQ, STEP);
