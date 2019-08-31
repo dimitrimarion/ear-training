@@ -31,18 +31,6 @@ buttonControlPlay.addEventListener('click', function () {
     }
 });
 
-/*
-const buttonStart = document.querySelector('.start');
-buttonStart.addEventListener('click', function () {
-    oscillator.onPlay();
-} , false);
-
-const buttonStop = document.querySelector('.stop');
-buttonStop.addEventListener('click', function() {
-     
-}, false);
-*/
-
 const guessButtons = document.querySelectorAll(".guess");
 setButtonFreq();
 
@@ -50,6 +38,9 @@ const guesses = document.querySelector(".guesses");
 
 guesses.addEventListener('mousedown', onGuess);
 guesses.addEventListener('mouseup', updateFreq);
+
+const redoButton = document.querySelector(".redo");
+redoButton.addEventListener('click', updateFreq);
 
 function setButtonFreq() {
     for (let button of guessButtons.entries()) {
@@ -72,7 +63,6 @@ function updateFreq() {
 
     frequency.fillFreqToGuess(NB_GUESS);
     frequency.setFreqValue();
-
     setButtonFreq();
 
     oscillator.setFrequency(frequency.freqValue);
