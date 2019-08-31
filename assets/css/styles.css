@@ -1,0 +1,58 @@
+:root {
+    font-size: calc(1vw + 0.6em);
+    --guesses-height: 80%;
+    --button-max-width: 100%;
+    --main-color: #444;
+}
+
+body {
+    color: var(--main-color);
+}
+
+main {
+    margin: 0 auto;
+    max-width: 50em;
+    padding: 2em;
+    height: 100vh;
+    /*display: flex;
+    flex-direction: column;*/
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    /*margin-bottom: 0.75em;*/
+    height: 10%;
+}
+
+.guesses {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    height: var(--guesses-height);
+}
+
+.guess {
+    flex: 1 0 20em;
+    margin-bottom: 0.5em;
+    font-size: 3rem;
+    max-width: var(--button-max-width);
+    font-family: 'Roboto Mono', monospace;
+
+    border: none;
+    border-radius: 0.15em;
+    background: linear-gradient(rgb(204, 204, 204),rgb(233, 233, 233));
+}
+
+.control {
+    height: 10%;
+}
+
+@media (min-width: 40em) {
+    :root {
+        --button-max-width: 50%;
+    }
+    
+}
