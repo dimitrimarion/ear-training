@@ -37,10 +37,10 @@ setButtonFreq();
 const guesses = document.querySelector(".guesses");
 
 guesses.addEventListener('mousedown', onGuess);
-guesses.addEventListener('mouseup', updateFreq);
+//guesses.addEventListener('mouseup', updateFreq);
 
 const redoButton = document.querySelector(".redo");
-redoButton.addEventListener('click', updateFreq);
+redoButton.addEventListener('click', redo);
 
 function setButtonFreq() {
     for (let button of guessButtons.entries()) {
@@ -52,9 +52,14 @@ function onGuess(event) {
     console.log("button clicked");
     console.log(event.target);
     if (event.target.textContent === String(frequency.freqValue)) {
-        console.log("correct");
+        event.target.classList.add("correct");
     } else {
-        console.log("wrong");
+        event.target.classList.add("wrong");
+        for (let button of guessButtons) {
+            if (button.textContent === String(frequency.freqValue)) {
+                button.classList.add("correct");
+            }
+        }
     }
 }
 
@@ -70,4 +75,13 @@ function updateFreq() {
     console.log(frequency.freqRange);
     console.log(frequency.freqToGuess);
     console.log(frequency.freqValue);
+}
+
+function redo() {
+    updateFreq();
+
+    for (let button of guessButtons) {
+        button.classList.remove("correct");
+        button.classList.remove("wrong");  
+    }
 }

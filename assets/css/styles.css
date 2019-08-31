@@ -53,6 +53,14 @@ button {
     background: linear-gradient(rgb(204, 204, 204),rgb(233, 233, 233));
 }
 
+.guess.correct {
+    background: linear-gradient(palegreen,rgb(186, 255, 186));
+}
+
+.guess.wrong {
+    background: linear-gradient(rgb(233, 54, 89), rgb(238, 98, 126))
+}
+
 .control {
     height: 10%;
     text-align: center;
@@ -102,6 +110,5 @@ button {
 @media (min-width: 40em) {
     :root {
         --button-max-width: 50%;
-    }
-    
+    }  
 }
