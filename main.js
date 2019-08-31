@@ -19,6 +19,19 @@ console.log(frequency.freqValue);
 const oscillator = new Oscillator('sine', frequency.freqValue);
 oscillator.init();
 
+const buttonControlPlay = document.querySelector(".control-play");
+
+buttonControlPlay.addEventListener('click', function () {
+    if (buttonControlPlay.classList.contains("paused")) {
+        buttonControlPlay.classList.remove("paused");
+        oscillator.disconnect();
+    } else {
+        buttonControlPlay.classList.add("paused");
+        oscillator.onPlay();
+    }
+});
+
+/*
 const buttonStart = document.querySelector('.start');
 buttonStart.addEventListener('click', function () {
     oscillator.onPlay();
@@ -26,8 +39,9 @@ buttonStart.addEventListener('click', function () {
 
 const buttonStop = document.querySelector('.stop');
 buttonStop.addEventListener('click', function() {
-     oscillator.disconnect();
+     
 }, false);
+*/
 
 const guessButtons = document.querySelectorAll(".guess");
 setButtonFreq();

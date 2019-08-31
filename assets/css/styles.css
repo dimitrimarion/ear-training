@@ -34,6 +34,10 @@ h1 {
     height: var(--guesses-height);
 }
 
+button {
+    cursor: pointer;
+}
+
 .guess {
     flex: 1 0 20em;
     margin-bottom: 0.5em;
@@ -48,6 +52,29 @@ h1 {
 
 .control {
     height: 10%;
+    text-align: center;
+}
+
+.control-play {
+    padding: 0;
+    width: 8.5vh;
+    height: 8.5vh;
+    border-width: 4.25vh 0 4.25vh 7.5vh;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+    background: transparent;
+    outline: none;
+    /*transition: 50ms all ease;*/
+}
+
+.control-play.paused {
+    width: 8.5vh;
+    height: 8.5vh;
+    border-style: double;
+    border-width: 0 0 0 4.25vh;
+    border-color: black;
+    margin-left: 4.25vh;
+    outline: none;
 }
 
 @media (min-width: 40em) {
