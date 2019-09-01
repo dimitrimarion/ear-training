@@ -4,6 +4,8 @@
     --button-max-width: 100%;
     --main-color: #444;
     --hover-color: rgb(97, 97, 97);
+    --heading-height: 10%;
+    --control-height: 10%;
 }
 
 body {
@@ -25,7 +27,7 @@ h1 {
     font-weight: 700;
     font-size: 2rem;
     /*margin-bottom: 0.75em;*/
-    height: 10%;
+    height: var(--heading-height);
 }
 
 .guesses {
@@ -62,7 +64,7 @@ button {
 }
 
 .control {
-    height: 10%;
+    height: var(--control-height);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -109,6 +111,14 @@ button {
 
 @media (min-width: 40em) {
     :root {
-        --button-max-width: 50%;
-    }  
+        --button-max-width: 45%;
+        --guesses-height: 70%;
+        --heading-height: 15%;
+        --control-height: 15%;
+    }
+
+    .guess:nth-child(2n+1) {
+        margin-right: 5%;
+    }
+
 }
