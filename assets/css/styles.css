@@ -10,6 +10,7 @@
 
 body {
     color: var(--main-color);
+    font-family: sans-serif;
 }
 
 main {
@@ -19,12 +20,15 @@ main {
     height: 100vh;
 }
 
-h1 {
+header {
     text-align: center;
+    height: var(--heading-height);
+}
+
+h1 {
     font-family: 'Merriweather', serif;
     font-weight: 700;
     font-size: 2rem;
-    height: var(--heading-height);
 }
 
 .guesses {
