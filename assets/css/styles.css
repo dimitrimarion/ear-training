@@ -17,8 +17,6 @@ main {
     max-width: 50em;
     padding: 2em;
     height: 100vh;
-    /*display: flex;
-    flex-direction: column;*/
 }
 
 h1 {
@@ -26,7 +24,6 @@ h1 {
     font-family: 'Merriweather', serif;
     font-weight: 700;
     font-size: 2rem;
-    /*margin-bottom: 0.75em;*/
     height: var(--heading-height);
 }
 
@@ -78,7 +75,6 @@ button {
     border-style: solid;
     border-color: transparent transparent transparent var(--main-color);
     background: transparent;
-    /*transition: 50ms all ease;*/
 }
 
 .control-play:hover {
@@ -91,6 +87,10 @@ button {
     border-style: double;
     border-width: 0 0 0 4.25vh;
     border-color: var(--main-color);
+}
+
+.control-play.paused:hover {
+    border-color: var(--hover-color);
 }
 
 .redo {
@@ -120,5 +120,4 @@ button {
     .guess:nth-child(2n+1) {
         margin-right: 5%;
     }
-
 }
