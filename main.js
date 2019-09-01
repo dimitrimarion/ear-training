@@ -23,8 +23,7 @@ const buttonControlPlay = document.querySelector(".control-play");
 
 buttonControlPlay.addEventListener('click', function () {
     if (buttonControlPlay.classList.contains("paused")) {
-        buttonControlPlay.classList.remove("paused");
-        oscillator.disconnect();
+        pause();
     } else {
         buttonControlPlay.classList.add("paused");
         oscillator.onPlay();
@@ -48,9 +47,19 @@ function setButtonFreq() {
     }
 }
 
+function pause () {
+    buttonControlPlay.classList.remove("paused");
+    oscillator.disconnect();
+}
+
 function onGuess(event) {
     console.log("button clicked");
     console.log(event.target);
+
+    if (buttonControlPlay.classList.contains("paused")) {
+        pause();
+    }
+
     if (event.target.textContent === String(frequency.freqValue)) {
         event.target.classList.add("correct");
     } else {
