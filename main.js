@@ -12,15 +12,10 @@ frequency.fillFreqRange(MAX_FREQ, STEP);
 frequency.fillFreqToGuess(NB_GUESS);
 frequency.setFreqValue();
 
-console.log(frequency.freqRange);
-console.log(frequency.freqToGuess);
-console.log(frequency.freqValue);
-
 const oscillator = new Oscillator('sine', frequency.freqValue);
 oscillator.init();
 
 const buttonControlPlay = document.querySelector(".control-play");
-
 buttonControlPlay.addEventListener('click', function () {
     if (buttonControlPlay.classList.contains("paused")) {
         pause();
@@ -34,9 +29,7 @@ const guessButtons = document.querySelectorAll(".guess");
 setButtonFreq();
 
 const guesses = document.querySelector(".guesses");
-
 guesses.addEventListener('mousedown', onGuess);
-//guesses.addEventListener('mouseup', updateFreq);
 
 const redoButton = document.querySelector(".redo");
 redoButton.addEventListener('click', redo);
@@ -53,9 +46,6 @@ function pause () {
 }
 
 function onGuess(event) {
-    console.log("button clicked");
-    console.log(event.target);
-
     if (buttonControlPlay.classList.contains("paused")) {
         pause();
     }
@@ -73,17 +63,11 @@ function onGuess(event) {
 }
 
 function updateFreq() {
-    console.log("mouse up");
-
     frequency.fillFreqToGuess(NB_GUESS);
     frequency.setFreqValue();
     setButtonFreq();
 
     oscillator.setFrequency(frequency.freqValue);
-
-    console.log(frequency.freqRange);
-    console.log(frequency.freqToGuess);
-    console.log(frequency.freqValue);
 }
 
 function redo() {

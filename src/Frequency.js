@@ -6,6 +6,10 @@ function Frequency() {
     this.freqValue = 0;
 }
 
+// Create an array filled with keys created from Array.from => [0, 1, 2, ..., 50]
+// Then multiply each element by STEP => [0, 100, 200,... , 4900, 5000]
+// And remove the first element
+// [100, 200, ..., 4900, 5000]
 Frequency.prototype.fillFreqRange = function(maxFreq, step) {
     this.freqRange = Array.from(Array(maxFreq/step +1).keys()).map(x => x*step).slice(1);
 }
