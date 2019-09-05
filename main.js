@@ -4,11 +4,12 @@ import Frequency from './src/Frequency';
 import Oscillator from './src/Oscillator';
 
 const MAX_FREQ = 5000;
-const STEP = 100;
+const MIN_FREQ = 100;
+const STEP = 10;
 const NB_GUESS = 4;
 
 const frequency = new Frequency();
-frequency.fillFreqRange(MAX_FREQ, STEP);
+frequency.fillFreqRange(MIN_FREQ, MAX_FREQ, STEP);
 frequency.fillFreqToGuess(NB_GUESS);
 frequency.setFreqValue();
 
