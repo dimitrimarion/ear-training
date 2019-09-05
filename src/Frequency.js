@@ -9,7 +9,7 @@ function Frequency() {
 // min: 500, max: 5000, step: 100
 // Create an array filled with keys created from Array.from => [0, 1, 2, ..., 50]
 // Remove value inferior than min/step => [5, 6,..., 50]
-// And multiply each element by step
+// And multiply each element by step => [500, 600, ..., 5000]
 Frequency.prototype.fillFreqRange = function(min, max, step) {
 
     let arrKeys = Array.from(Array(max/step + 1).keys());

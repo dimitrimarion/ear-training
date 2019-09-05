@@ -5,7 +5,7 @@ import Oscillator from './src/Oscillator';
 
 const MAX_FREQ = 5000;
 const MIN_FREQ = 100;
-const STEP = 10;
+const STEP = 100;
 const NB_GUESS = 4;
 
 const frequency = new Frequency();
